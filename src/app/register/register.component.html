@@ -2,6 +2,7 @@
   <mat-card style="margin-top: 100px">
     <div class="container text-center">
       <h1>Register Here!!</h1>
+      {{user | json}}
     </div>
     <form>
       <div class="mb-3">
@@ -10,7 +11,7 @@
           type="text"
           class="form-control"
           name="username"
-          [(ngModel)]="username"
+          [(ngModel)]="user.username"
         />
       </div>
       <div class="mb-3">
@@ -19,7 +20,7 @@
           type="email"
           class="form-control"
           name="emailid"
-          [(ngModel)]="emailid"
+          [(ngModel)]="user.emailid"
         />
       </div>
       <div class="mb-3">
@@ -28,13 +29,16 @@
           type="password"
           class="form-control text-center"
           name="password"
-          [(ngModel)]="password"
+          [(ngModel)]="user.password"
           id="exampleInputPassword1"
         />
       </div>
       <div class="container text-center">
         <button type="submit" class="btn btn-primary" (click)="registerme()">
           Submit
+        </button>
+        <button type="submit" class="btn btn-primary" (click)="getusers()">
+          getall
         </button>
       </div>
     </form>

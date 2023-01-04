@@ -1,5 +1,5 @@
 export class user{
-    username !: string ; // this means null
-    emailid !: string;
-    password !: string;
+    username: string ="";
+    emailid: string="";
+    password : string ="";
 }

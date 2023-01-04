@@ -18,11 +18,11 @@
           <a class="nav-link" aria-current="page" routerLink="">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="login" >Login</a> <!--when you clicked on login button-->
-          <!--Before clicking on login button make sure you register your login path in app-routing -->
+          <a class="nav-link" routerLink="signup" *ngIf="!ok">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="signup">Register</a>
+          <a class="nav-link" routerLink="login" *ngIf="!ok" >Login</a> <!--when you clicked on login button-->
+          <!--Before clicking on login button make sure you register your login path in app-routing -->
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -30,9 +30,12 @@
           class="form-control me-2"
           type="search"
           placeholder="Search"
-          aria-label="Search"
+          aria-label="Search" *ngIf="!ok"
         />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-warning" c type="submit" *ngIf="!ok">Search</button>
+        <span *ngIf="ok" >{{tempname}}</span>
+        <button mat-raised-button color="accent" c type="submit" *ngIf="ok" (click) = "logout()">Logout</button>
+
       </form>
       
     </div>

@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { BackendService } from './backend.service';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { BackendService } from './backend.service';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    DashboardComponent,
 
   ],
   imports: [
@@ -32,7 +35,8 @@ import { BackendService } from './backend.service';
     MatFormFieldModule,
     FormsModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]

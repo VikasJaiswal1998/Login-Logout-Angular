@@ -1,9 +1,10 @@
-<div class="container ">
-  <mat-card style="margin-top:50px;">
-    <div class="container text-center" >
-        <h1>Login Here!!</h1>
+<div class="container">
+  <mat-card style="margin-top: 50px">
+    <div class="container text-center">
+      <h1>Login Here!!</h1>
+      {{ login | json }}
     </div>
-    <form >
+    <form>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Email address</label>
         <input
@@ -11,6 +12,8 @@
           class="form-control text-center"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
+          name="emailid"
+          [(ngModel)]="login.emailid"
         />
         <div id="emailHelp" class="form-text">
           We'll never share your email with anyone else.
@@ -22,11 +25,18 @@
           type="password"
           class="form-control text-center"
           id="exampleInputPassword1"
+          name="password"
+          [(ngModel)]="login.password"
         />
       </div>
       <div class="container text-center">
-        <button type="submit" class="btn btn-primary ">Submit</button>
-    </div>
+        <button type="submit" class="btn btn-primary" (click)="Login()">
+          Submit
+        </button>
+        <button type="reset" class="btn btn-primary" style="margin-left: 10px">
+          Reset
+        </button>
+      </div>
     </form>
   </mat-card>
 </div>
